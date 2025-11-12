@@ -17,15 +17,18 @@ Rallymate is a comprehensive table tennis analysis system that uses computer vis
   - 17 COCO keypoint visualization
   - Full pose skeleton overlay
   - Real-time biomechanical tracking
-- **Rich Visualizations**: Generates 8+ matplotlib/seaborn diagrams including:
-  - Shot distribution analysis
-  - Velocity analysis (distribution, trends, comparisons)
-  - Joint angle analysis
-  - Duration analysis
-  - Player-to-player comparisons
-  - Correlation heatmaps
-  - Timeline analysis
-  - Statistics summary tables
+- **Rich Visualizations**: Generates 15 professional matplotlib/seaborn diagrams including:
+  - Shot type distribution (bar & pie charts)
+  - Velocity comparison and KDE distributions
+  - Duration analysis (multi-panel)
+  - Angle correlation heatmaps
+  - Player performance comparisons
+  - Center of gravity movement analysis
+  - Temporal analysis with moving averages
+  - Performance metrics radar charts
+  - Advanced scatter matrices
+  - Shot efficiency analysis
+  - Comprehensive overview dashboards
 
 ## 📂 Project Structure
 ```
@@ -40,7 +43,7 @@ Rallymate/
 │   ├── analysisCSV/             # CSV analysis reports
 │   ├── analysisText/            # Text analysis reports
 │   ├── analysisVideo/           # Annotated demonstration videos
-│   └── visualizations/          # Generated diagrams (8 PNG files)
+│   └── diagrams/                # Generated diagrams (15 PNG files)
 └── src/
     └── vision/                   # Core analysis modules
         ├── game_analyzer.py
@@ -84,19 +87,32 @@ python render_analysis_video.py
 This generates:
 - `output/analysisVideo/analyzed_video.mp4` (with pose skeletons and keypoints)
 
-#### 3. Generate Visualizations
+#### 3. Generate Visualizations (Datathon-Ready Diagrams)
 ```bash
+# Activate virtual environment first
+source venv/bin/activate
+
+# Generate all 15 diagrams
 python visualize_analysis.py
 ```
-This generates 8 diagrams in `output/visualizations/`:
-1. `01_shot_distribution.png` - Shot type distribution
-2. `02_velocity_analysis.png` - Velocity metrics
-3. `03_angle_analysis.png` - Joint angle analysis
-4. `04_duration_analysis.png` - Shot duration analysis
-5. `05_player_comparison.png` - Player performance comparison
-6. `06_correlation_heatmap.png` - Metric correlations
-7. `07_timeline_analysis.png` - Timeline and trends
-8. `08_statistics_summary.png` - Summary table
+This generates 15 professional diagrams in `output/diagrams/`:
+1. `01_shot_type_distribution.png` - Bar & pie charts of shot distribution
+2. `02_velocity_comparison.png` - Box plots comparing velocities
+3. `03_duration_analysis.png` - Multi-panel duration analysis
+4. `04_angle_correlation_heatmap.png` - Body angle correlations
+5. `05_velocity_vs_duration.png` - Scatter plots of velocity relationships
+6. `06_player_performance.png` - Comprehensive player comparisons
+7. `07_movement_analysis.png` - Center of gravity movement patterns
+8. `08_angle_distributions.png` - Violin plots for angle distributions
+9. `09_temporal_analysis.png` - Time series with moving averages
+10. `10_performance_radar.png` - Multi-metric radar chart
+11. `11_velocity_kde.png` - Kernel density estimations
+12. `12_summary_statistics.png` - Statistics summary table
+13. `13_scatter_matrix.png` - Pairwise scatter matrix
+14. `14_shot_efficiency.png` - Efficiency analysis dashboard
+15. `15_comprehensive_overview.png` - Executive dashboard
+
+See `VISUALIZATION_REPORT.md` for detailed descriptions of each diagram.
 
 ## 📊 Sample Output
 
